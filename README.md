@@ -27,4 +27,6 @@ The following hardware is used to construct the quadcopter:
 <a id="Software">Software</a> 
 -
 
+Initially the [MultiWii](http://www.multiwii.com/) software will be used.
+
 
