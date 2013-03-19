@@ -1,28 +1,16 @@
 //Detail steps
 $fn=50;
 
-//PCB
+//CFK
 color("Blue")
 translate([ 0, 0, 0])
 linear_extrude(height = 2, center = true, convexity = 0, twist = 0)
-import(file = "nanoquad-r12.dxf", layer = "0");
+import(file = "nanoquad-v4.dxf", layer = "0");
 
-//Plywood
-color("Yellow")
-translate([ 0, 0, -2])
-linear_extrude(height = 2, center = true, convexity = 0, twist = 0)
-import(file = "nanoquad-r12.dxf", layer = "0");
-
-//GFK
-color("Brown")
-translate([ 0, 0, -4])
-linear_extrude(height = 2, center = true, convexity = 0, twist = 0)
-import(file = "nanoquad-r12.dxf", layer = "0");
-
-//NanoWii
+//Naze32
 difference() {
 
-	rotate(a=[0,0,45])
+	//rotate(a=[0,0,45])
 	translate([ -16, -16, 5])
 	minkowski()
 	{
@@ -41,22 +29,23 @@ difference() {
 
 //Mounts
 color("Grey")
-translate([ -21.2,0, -6])
-cylinder(18,1.5,1.5,[0,0,0]);
+translate([ -15.25,-15.25, -2])
+cylinder(18,1.6,1.6,[0,0,0]);
 
 color("Grey")
-translate([ 0,-21.2, -6])
-cylinder(14,1.5,1.5,[0,0,0]);
+translate([ -15.25,15.25, -2])
+cylinder(18,1.6,1.6,[0,0,0]);
 
 color("Grey")
-translate([ 21.2,0, -6])
-cylinder(18,1.5,1.5,[0,0,0]);
+translate([ 15.25,-15.25, -2])
+cylinder(18,1.6,1.6,[0,0,0]);
 
 color("Grey")
-translate([ 0,21.2, -6])
-cylinder(14,1.5,1.5,[0,0,0]);
+translate([ 15.25,15.25, -2])
+cylinder(18,1.6,1.6,[0,0,0]);
 
 color("Red")
+rotate(a=[0,0,45])
 translate([-15,0,11])
 hull() {
    translate([30,0,0]) circle(10);
@@ -85,10 +74,10 @@ union(){
 	cylinder(2,50,50,[0,0,0]);
 }
 
-motor(-50,-50);
+motor(-54,-53);
 
-motor(50,50);
+motor(54,53);
 
-motor(-50,50);
+motor(-54,53);
 
-motor(50,-50);
+motor(54,-53);
