@@ -2,12 +2,13 @@
 $fn=50;
 
 //CFK
-color("Blue")
+color("Black")
 translate([ 0, 0, 0])
 linear_extrude(height = 2, center = true, convexity = 0, twist = 0)
 import(file = "nanoquad-v4.dxf", layer = "0");
 
 //Naze32
+color("White")
 difference() {
 
 	//rotate(a=[0,0,45])
@@ -44,13 +45,12 @@ color("Grey")
 translate([ 15.25,15.25, -2])
 cylinder(18,1.6,1.6,[0,0,0]);
 
-color("Red")
-rotate(a=[0,0,45])
-translate([-15,0,11])
-hull() {
-   translate([30,0,0]) circle(10);
-   circle(10);
- }
+//CFK
+color("Black")
+translate([ -62, -42, 10])
+linear_extrude(height = 1, center = true, convexity = 0, twist = 0)
+import(file = "upperv4.dxf", layer = "0");
+
 
 //Motors
 
